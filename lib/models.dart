@@ -58,7 +58,9 @@ class GeocoderGeometry {
   GeocoderGeometry();
 
   GeocoderGeometry.fromJson(Map<String, dynamic> json) {
-    bounds = GeocoderBounds.fromJson(json['bounds']);
+    if (json['bounds'] != null) {
+      bounds = GeocoderBounds.fromJson(json['bounds']);
+    }
     location = Coordinates(
       latitude: double.parse(json['location']['lat'].toString()),
       longitude: double.parse(json['location']['lat'].toString()),
