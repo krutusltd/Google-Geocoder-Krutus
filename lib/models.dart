@@ -63,7 +63,7 @@ class GeocoderGeometry {
     }
     location = Coordinates(
       latitude: double.parse(json['location']['lat'].toString()),
-      longitude: double.parse(json['location']['lat'].toString()),
+      longitude: double.parse(json['location']['lng'].toString()),
     );
     locationType = json['location_type'].toString();
     viewport = GeocoderBounds.fromJson(json['viewport']);
