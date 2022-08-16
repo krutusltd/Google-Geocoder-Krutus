@@ -8,6 +8,7 @@ class GoogleGeocoderKrutus {
   static Future<GeocoderResponse?> reverseGeoCode({
     required String apiKey,
     required Coordinates coordinates,
+    String language = 'en',
   }) async {
     try {
       Uri url = Uri(
@@ -17,6 +18,7 @@ class GoogleGeocoderKrutus {
         queryParameters: {
           'latlng': '${coordinates.latitude},${coordinates.longitude}',
           'key': apiKey,
+          'language': language,
         },
       );
       var response = await http.get(url);
@@ -40,6 +42,7 @@ class GoogleGeocoderKrutus {
   static Future<GeocoderResponse?> addressQuery({
     required String apiKey,
     required String address,
+    String language = 'en',
   }) async {
     try {
       Uri url = Uri(
@@ -49,6 +52,7 @@ class GoogleGeocoderKrutus {
         queryParameters: {
           'address': address,
           'key': apiKey,
+          'language': language,
         },
       );
       var response = await http.get(url);
@@ -72,6 +76,7 @@ class GoogleGeocoderKrutus {
   static Future<GeocoderResponse?> placeID({
     required String apiKey,
     required String placeId,
+    String language = 'en',
   }) async {
     try {
       Uri url = Uri(
@@ -81,6 +86,7 @@ class GoogleGeocoderKrutus {
         queryParameters: {
           'place_id': placeId,
           'key': apiKey,
+          'language': language,
         },
       );
       var response = await http.get(url);
