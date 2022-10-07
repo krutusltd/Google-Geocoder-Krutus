@@ -1,6 +1,6 @@
 name: google_geocoder_krutus
 description: A flutter plugin to Geocode or Reverse Geocode your coordinates or address strings using Google Maps Geocoder API.
-version: 1.0.0
+version: 1.1.0
 homepage: https://github.com/krutusltd/Google-Geocoder-Krutus
 
 environment:

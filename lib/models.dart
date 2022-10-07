@@ -9,12 +9,123 @@ class Coordinates {
 }
 
 class GeocoderResponse {
-  // List<String> plusCode = [];
   List<GeocoderResult> results = [];
+  List<String> establishment = [];
+  List<String> plusCode = [];
+  List<String> premise = [];
+  List<String> subLocalityLevel1 = [];
+  List<String> subLocalityLevel2 = [];
+  List<String> subLocality = [];
+  List<String> locality = [];
+  List<String> administrativeAreas1 = [];
+  List<String> administrativeAreas2 = [];
+  List<String> countries = [];
+  List<String> postalCodes = [];
 
   GeocoderResponse.fromJson(Map<String, dynamic> json) {
     for (var element in json['results']) {
       results.add(GeocoderResult.fromJson(element));
+    }
+
+    // Parsed Responses
+    for (var components in results) {
+      for (var element in components.addressComponents) {
+        if (element.types.contains('establishment')) {
+          if (!establishment.contains(element.longName)) {
+            establishment.add(element.longName);
+          }
+        }
+      }
+    }
+    for (var components in results) {
+      for (var element in components.addressComponents) {
+        if (element.types.contains('plus_code')) {
+          if (!plusCode.contains(element.longName)) {
+            plusCode.add(element.longName);
+          }
+        }
+      }
+    }
+    for (var components in results) {
+      for (var element in components.addressComponents) {
+        if (element.types.contains('premise')) {
+          if (!premise.contains(element.longName)) {
+            premise.add(element.longName);
+          }
+        }
+      }
+    }
+    for (var components in results) {
+      for (var element in components.addressComponents) {
+        if (element.types.contains('sublocality_level_1')) {
+          if (!subLocalityLevel1.contains(element.longName)) {
+            subLocalityLevel1.add(element.longName);
+          }
+        }
+      }
+    }
+    for (var components in results) {
+      for (var element in components.addressComponents) {
+        if (element.types.contains('sublocality_level_2')) {
+          if (!subLocalityLevel2.contains(element.longName)) {
+            subLocalityLevel2.add(element.longName);
+          }
+        }
+      }
+    }
+    for (var components in results) {
+      for (var element in components.addressComponents) {
+        if (element.types.contains('sublocality')) {
+          if (!subLocality.contains(element.longName)) {
+            subLocality.add(element.longName);
+          }
+        }
+      }
+    }
+    for (var components in results) {
+      for (var element in components.addressComponents) {
+        if (element.types.contains('locality')) {
+          if (!locality.contains(element.longName)) {
+            locality.add(element.longName);
+          }
+        }
+      }
+    }
+    for (var components in results) {
+      for (var element in components.addressComponents) {
+        if (element.types.contains('administrative_area_level_1')) {
+          if (!administrativeAreas1.contains(element.longName)) {
+            administrativeAreas1.add(element.longName);
+          }
+        }
+      }
+    }
+    for (var components in results) {
+      for (var element in components.addressComponents) {
+        if (element.types.contains('administrative_area_level_2')) {
+          if (!administrativeAreas2.contains(element.longName)) {
+            administrativeAreas2.add(element.longName);
+          }
+        }
+      }
+    }
+    for (var components in results) {
+      for (var element in components.addressComponents) {
+        if (element.types.contains('country')) {
+          if (!countries.contains(element.longName)) {
+            countries.add(element.longName);
+          }
+        }
+      }
+    }
+    for (var components in results) {
+      for (var element in components.addressComponents) {
+        if (element.types.contains('postal_code')) {
+          if (!postalCodes.contains(element.longName)) {
+            postalCodes.add(element.longName);
+          }
+        }
+      }
     }
   }
 }

@@ -10,6 +10,26 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
+# Update for this release
+Added Support for data in the core result. Get all data in their type formatted from every `addressComponents` from every `results` data.
+
+- establishment
+- plusCode
+- premise
+- subLocalityLevel1
+- subLocalityLevel2
+- subLocality
+- locality
+- administrativeAreas1
+- administrativeAreas2
+- countries
+- postalCodes
+
+Eg:
+```
+print(addresses!.establishment);
+```
+
 ## Description
 A flutter plugin to Geocode or Reverse Geocode your coordinates or address strings using Google Maps Geocoder API.
 

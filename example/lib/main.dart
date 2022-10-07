@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
       apiKey: '<API KEY>',
       coordinates: Coordinates(latitude: 28.612912, longitude: 77.227321),
     );
-    print(addresses!.results.length);
+    print(addresses!.establishment);
   }
 
   @override
